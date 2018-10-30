@@ -70,6 +70,8 @@ public class ColorActivity extends AppCompatActivity {
         findViewById(R.id.color_returnButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                intent.putExtra("color", currentInfo.getColor());
+                setResult(RESULT_OK, intent);
                 finish();
             }
         });
@@ -105,9 +107,6 @@ public class ColorActivity extends AppCompatActivity {
 
         TextView productColor = findViewById(R.id.color_productColor);
         productColor.setText(currentInfo.getColor());
-
-        intent.putExtra("color", currentInfo.getColor());
-        setResult(RESULT_OK, intent);
     }
 
 }
